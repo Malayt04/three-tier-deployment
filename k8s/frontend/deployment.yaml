@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:latest  # Replace with your actual frontend image
+        image: malay04/todo-frontend 
         ports:
         - containerPort: 3000
         env:
         - name: REACT_APP_API_URL
-          value: "http://backend-svc:3500"  # Reference to backend service
+          value: "http://backend-svc:3500" 

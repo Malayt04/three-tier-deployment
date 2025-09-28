@@ -15,11 +15,11 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backend:latest  # Replace with your actual backend image
+        image: malay04/todo-backend
         ports:
         - containerPort: 3500
         env:
         - name: MONGO_CONN_STR
-          value: "mongodb://mongodb-svc:27017/tasks"  # Reference to MongoDB service
+          value: "mongodb://mongodb-svc:27017/tasks"  
         - name: PORT
           value: "3500"
