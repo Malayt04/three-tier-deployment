@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: three-tier
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: backend:latest  # Replace with your actual backend image
+        ports:
+        - containerPort: 3500
+        env:
+        - name: MONGO_CONN_STR
+          value: "mongodb://mongodb-svc:27017/tasks"  # Reference to MongoDB service
+        - name: PORT
+          value: "3500"
